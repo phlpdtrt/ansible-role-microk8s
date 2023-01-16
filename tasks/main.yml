@@ -6,14 +6,14 @@
     - always
     - microk8s
 
-- name: install microk8s
+- name: Install microk8s
   ansible.builtin.import_tasks:
     file: install.yml
   tags:
     - always
     - microk8s
 
-- name: configure microk8s Users
+- name: Configure microk8s Users
   ansible.builtin.include_tasks:
     file: configure-groups.yml
   when:
@@ -24,7 +24,7 @@
     - microk8s.users
     - notest
 
-- name: configure High Availability
+- name: Configure High Availability
   ansible.builtin.include_tasks:
     file: configure-HA.yml
   when:
@@ -33,7 +33,7 @@
     - microk8s
     - microk8s.ha
 
-- name: configure plugins
+- name: Configure plugins
   ansible.builtin.include_tasks:
     file: configure-plugins.yml
   run_once: true

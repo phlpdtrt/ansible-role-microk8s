@@ -46,7 +46,7 @@
     - microk8s.dependencies
     - microk8s.dependencies.cgroups
 
-- name: notify handler
+- name: Notify handler
   ansible.builtin.debug:
     msg: "{{ microk8s_update_boot_config.changed }}"
   notify: Reboot System

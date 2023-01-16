@@ -15,7 +15,7 @@
     - microk8s.ha.hosts
 
 - name: Set master var on all hosts
-  set_fact:
+  ansible.builtin.set_fact:
     microk8s_master: "{{ inventory_hostname }}"
   delegate_to: "{{ microk8s_hosts }}"
   delegate_facts: true
@@ -42,14 +42,20 @@
     cmd: >-
       microk8s add-node |
       grep -E -m1 'microk8s join {{ microk8s_ip_regex_ha }}'
-  with_items: "{{ ansible_play_hosts  | difference(microk8s_master) }}"
+  with_items: "{{ ansible_play_hosts | difference(microk8s_master) }}"
   loop_control:
     loop_var: microk8s_join_cmd
   when: inventory_hostname in microk8s_master
   changed_when: false
   register: microk8s_join_command
 
-- block:
+- name: Join microk8s cluster
+  when: inventory_hostname not in microk8s_master
+  tags:
+    - microk8s
+    - microk8s.ha
+    - microk8s.ha.join
+  block:
     - name: Waiting for microk8s to be ready on microk8s host node
       ansible.builtin.command:
         cmd: microk8s status --wait-ready
@@ -62,10 +68,4 @@
       loop_control:
         loop_var: microk8s_join_cmd
       when: inventory_hostname in microk8s_join_cmd.microk8s_join_cmd and inventory_hostname not in hostvars[microk8s_master]['microk8s_cluster_node'].stdout # yamllint disable-line
-
-  when: inventory_hostname not in microk8s_master
-  tags:
-    - microk8s
-    - microk8s.ha
-    - microk8s.ha.join
 ...

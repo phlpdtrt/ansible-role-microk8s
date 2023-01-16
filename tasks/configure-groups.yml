@@ -1,5 +1,5 @@
 ---
-- name: add user to group
+- name: Add user to group
   ansible.builtin.user:
     name: "{{ microk8s_user }}"
     groups: microk8s
@@ -30,7 +30,7 @@
     - microk8s.kube
     - microk8s.kube.dir
 
-- name: create kubectl config
+- name: Create kubectl config
   ansible.builtin.shell:
     cmd: microk8s config > {{ microk8s_user.home }}/.kube/config
   args:
@@ -48,7 +48,7 @@
     - microk8s.kube
     - microk8s.kube.config
 
-- name: reaffirm permission on config directory
+- name: Reaffirm permission on config directory
   ansible.builtin.file:
     path: "{{ microk8s_user.home }}/.kube"
     state: directory
@@ -64,7 +64,7 @@
     - microk8s.kube
     - microk8s.kube.permission
 
-- name: reaffirm permission on config file
+- name: Reaffirm permission on config file
   ansible.builtin.file:
     path: "{{ microk8s_user.home }}/.kube/config"
     state: file
