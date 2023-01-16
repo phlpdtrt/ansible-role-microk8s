@@ -34,7 +34,7 @@
     name: microk8s
     classic: true
     channel: "{{ microk8s_channel }}"
-  notify: microk8s ready
+  notify: Microk8s ready
   tags:
     - microk8s
     - microk8s.install
