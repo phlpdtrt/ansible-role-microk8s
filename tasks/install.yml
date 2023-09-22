@@ -31,14 +31,26 @@
     - microk8s.dependencies.services
 
 - name: Install microk8s
-  community.general.snap:
-    name: microk8s
-    classic: true
-    channel: "{{ microk8s_channel }}"
+  ansible.builtin.command:
+    cmd: "snap install microk8s --classic --channel={{ microk8s_channel }}"
+  register: microk8s_cmd_result
+  changed_when: "'is already installed' not in microk8s_cmd_result.stderr"
   notify: Microk8s ready
   tags:
     - microk8s
     - microk8s.install
+
+# Disabled due to broken snap module in community collection
+#- name: Install microk8s
+#  community.general.snap:
+#    name: microk8s
+#    classic: true
+#    state: present
+#    channel: "{{ microk8s_channel }}"
+#  notify: Microk8s ready
+#  tags:
+#    - microk8s
+#    - microk8s.install
 
 - name: Create kubectl alias
   ansible.builtin.command:
