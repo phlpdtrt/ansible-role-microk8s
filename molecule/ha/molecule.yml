@@ -13,6 +13,7 @@ platforms:
       - ${PWD}/library:/root/.ansible/plugins/modules:ro
     privileged: true
     pre_build_image: true
+    cgroupns_mode: host
     tty: true
     environment:
       container: docker
