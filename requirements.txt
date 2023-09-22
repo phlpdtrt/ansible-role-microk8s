@@ -2,6 +2,6 @@ ansible
 ansible-lint
 molecule>=3.3.3
 molecule-vagrant
-molecule[docker]
+molecule-plugins[docker]
 pre-commit
 python-vagrant
