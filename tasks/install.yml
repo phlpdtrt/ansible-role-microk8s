@@ -109,4 +109,3 @@
     - notest
     - microk8s
     - microk8s.disable_autoupdate
-
