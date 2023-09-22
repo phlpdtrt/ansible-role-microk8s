@@ -65,8 +65,11 @@ jobs:
         with:
           python-version: 3.x
 
-      - name: Install Dependencies
+      - name: Install pip dependencies
         run: pip3 install -r requirements.txt
+
+      - name: Install ansible dependencies
+        run: ansible-galaxy install -r requirements.yml
 
       - name: Run Molecule tests
         run: |
