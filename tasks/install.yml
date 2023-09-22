@@ -22,6 +22,7 @@
   with_items:
     - snapd
     - udev
+  changed_when: false
   loop_control:
     loop_var: microk8s_service
     label: "{{ microk8s_service }}"

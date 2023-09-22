@@ -61,6 +61,7 @@
       loop_control:
         loop_var: microk8s_service
         label: "{{ microk8s_service }}"
+      changed_when: false
       check_mode: true
       register: microk8s_verify
       failed_when: microk8s_verify.changed

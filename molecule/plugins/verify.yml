@@ -64,6 +64,7 @@
         mode: 0755
       check_mode: true
       register: microk8s_verify
+      changed_when: false
       failed_when: microk8s_verify.changed
       tags:
         - microk8s
