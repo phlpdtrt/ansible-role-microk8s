@@ -1,8 +1,8 @@
 ---
 galaxy_info:
   role_name: microk8s
-  author: ckaserer
-  namespace: gepaplexx
+  author: dittertp
+  namespace: phlpdtrt
   description: >-
     Install and configure microk8s - the smallest,
     simplest, pure production K8s on debian based systems.
@@ -12,6 +12,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - focal
+        - jammy
   galaxy_tags:
     - container
     - development

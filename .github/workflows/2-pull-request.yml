@@ -6,7 +6,7 @@ name: Pull Request
 
 defaults:
   run:
-    working-directory: gepaplexx.microk8s
+    working-directory: phlpdtrt.microk8s
 
 jobs:
 
@@ -48,13 +48,14 @@ jobs:
       matrix:
         distro:
           - ubuntu2004
+          - ubuntu2204
       fail-fast: false
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-          path: gepaplexx.microk8s
+          path: phlpdtrt.microk8s
 
       - name: Set up Python 3
         uses: actions/setup-python@v4

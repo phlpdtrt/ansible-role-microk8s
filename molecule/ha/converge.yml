@@ -3,7 +3,7 @@
   hosts: all
   become: true
   roles:
-    - role: gepaplexx.microk8s
+    - role: phlpdtrt.microk8s
       vars:
         microk8s_enable_ha: true
         microk8s_ip_regex_ha: "192.168.0."

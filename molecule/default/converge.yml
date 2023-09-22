@@ -3,7 +3,7 @@
   hosts: all
   become: true
   roles:
-    - role: gepaplexx.microk8s
+    - role: phlpdtrt.microk8s
       vars:
         skip_handlers: true
 ...

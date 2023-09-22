@@ -1,11 +1,5 @@
 # Ansible Role: microk8s
 
-![MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/gepaplexx/ansible-role-microk8s/Main?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/gepaplexx/ansible-role-microk8s?style=flat-square)
-![GitHub Release Date](https://img.shields.io/github/release-date/gepaplexx/ansible-role-microk8s?style=flat-square)
-![Maintenance](https://img.shields.io/maintenance/yes/2022?style=flat-square)
-
 Install and configure [microk8s](https://microk8s.io/) - the smallest, simplest, pure production K8s on debian based systems.
 
 ## Requirements
@@ -15,6 +9,7 @@ Install and configure [microk8s](https://microk8s.io/) - the smallest, simplest,
     * Debian Family
         * Ubuntu
             * Focal (20.04)
+            * Jammy (22.04)
 
 ## Usage
 
@@ -33,7 +28,7 @@ defined in `[defaults/main.yml](defaults/main.yml)`.
 ```yaml
 - hosts: servers
   roles:
-    - role: gepaplexx.microk8s
+    - role: phlpdtrt.microk8s
       vars:
         microk8s_plugins:
           istio: true

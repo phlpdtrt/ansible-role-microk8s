@@ -1,4 +1,5 @@
 ---
+
 - name: Make sure dependencies are installed
   ansible.builtin.apt:
     name:
@@ -98,16 +99,14 @@
     - microk8s.certs
     - microk8s.certs.trust
 
-- name: Disable snap autoupdate
-  ansible.builtin.blockinfile:
-    dest: /etc/hosts
-    marker: "# {mark} ANSIBLE MANAGED: microk8s Disable snap autoupdate"
-    content: |
-      127.0.0.1 api.snapcraft.io
+- name: prevent autoupdate for microk8s package
+  ansible.builtin.command:
+    cmd: snap refresh --hold microk8s
+  register:
   when:
     - (microk8s_disable_snap_autoupdate | bool)
   tags:
     - notest
     - microk8s
     - microk8s.disable_autoupdate
-...
+

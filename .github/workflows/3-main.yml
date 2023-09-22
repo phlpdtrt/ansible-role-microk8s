@@ -49,13 +49,14 @@ jobs:
       matrix:
         distro:
           - ubuntu2004
+          - ubuntu2204
       fail-fast: false
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-          path: gepaplexx.microk8s
+          path: phlpdtrt.microk8s
 
       - name: Set up Python 3
         uses: actions/setup-python@v4
@@ -63,7 +64,7 @@ jobs:
           python-version: 3.x
 
       - name: Install Dependencies
-        working-directory: gepaplexx.microk8s
+        working-directory: phlpdtrt.microk8s
         run: pip3 install -r requirements.txt
 
       - name: Run Molecule tests
@@ -71,7 +72,7 @@ jobs:
           for i in {1..3}; do
             molecule test && break
           done
-        working-directory: gepaplexx.microk8s
+        working-directory: phlpdtrt.microk8s
         env:
           PY_COLORS: 1
           ANSIBLE_FORCE_COLOR: 1
