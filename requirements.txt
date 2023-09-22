@@ -1,4 +1,4 @@
-ansible
+ansible==7.*
 ansible-lint
 molecule>=3.3.3
 molecule-plugins[docker]
