@@ -30,6 +30,7 @@
         loop_var: microk8s_service
         label: "{{ microk8s_service }}"
       check_mode: true
+      changed_when: false
       register: microk8s_verify
       failed_when: microk8s_verify.changed
       tags:
@@ -64,7 +65,6 @@
         mode: 0755
       check_mode: true
       register: microk8s_verify
-      changed_when: false
       failed_when: microk8s_verify.changed
       tags:
         - microk8s
