@@ -1,5 +1,5 @@
-ansible==7.*
-ansible-lint
+ansible==8.*
+ansible-lint==6.18.0
 molecule>=3.3.3
 molecule-plugins[docker]
 molecule-vagrant
