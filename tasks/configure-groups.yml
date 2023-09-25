@@ -20,7 +20,7 @@
     state: directory
     owner: '{{ microk8s_user.name }}'
     group: '{{ microk8s_user.name }}'
-    mode: 0750
+    mode: '0750'
   with_items: '{{ microk8s_add_user_to_group.results }}'
   loop_control:
     loop_var: microk8s_user
@@ -70,7 +70,7 @@
     state: file
     owner: '{{ microk8s_user.name }}'
     group: '{{ microk8s_user.name }}'
-    mode: 0600
+    mode: '0600'
   with_items: '{{ microk8s_add_user_to_group.results }}'
   loop_control:
     loop_var: microk8s_user

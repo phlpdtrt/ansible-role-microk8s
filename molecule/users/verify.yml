@@ -74,7 +74,7 @@
       ansible.builtin.file:
         path: /usr/share/ca-certificates/extra
         state: directory
-        mode: 0755
+        mode: '0755'
       check_mode: true
       register: microk8s_verify
       failed_when: microk8s_verify.changed
@@ -89,7 +89,7 @@
         dest: /usr/share/ca-certificates/extra
         remote_src: true
         force: true
-        mode: 0644
+        mode: '0644'
       loop_control:
         loop_var: microk8s_ca
         label: "{{ microk8s_ca }}"
