@@ -54,6 +54,7 @@ jobs:
           - ubuntu2004
           - ubuntu2204
           - debian11
+          - debian12
 
     steps:
       - name: Checkout Code
