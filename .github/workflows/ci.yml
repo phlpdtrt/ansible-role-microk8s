@@ -53,6 +53,7 @@ jobs:
         distro:
           - ubuntu2004
           - ubuntu2204
+          - debian11
 
     steps:
       - name: Checkout Code
