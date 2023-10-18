@@ -1,15 +1,23 @@
+[![CI](https://github.com/phlpdtrt/ansible-role-microk8s/actions/workflows/ci.yml/badge.svg)](https://github.com/phlpdtrt/ansible-role-microk8s/actions/workflows/ci.yml)
+![MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/phlpdtrt/ansible-role-microk8s?style=flat-square)
+![GitHub Release Date](https://img.shields.io/github/release-date/phlpdtrt/ansible-role-microk8s?style=flat-square)
+
 # Ansible Role: microk8s
 
 Install and configure [microk8s](https://microk8s.io/) - the smallest, simplest, pure production K8s on debian based systems.
 
 ## Requirements
 
-* Ansible >= 2.10
+* Ansible >= 2.10 
 * Linux Distribution
     * Debian Family
         * Ubuntu
             * Focal (20.04)
             * Jammy (22.04)
+        * Debian
+            * Bullseye (11)
+            * Bookworm (12)
 
 ## Usage
 
