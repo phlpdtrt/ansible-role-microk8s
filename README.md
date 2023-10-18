@@ -9,15 +9,15 @@ Install and configure [microk8s](https://microk8s.io/) - the smallest, simplest,
 
 ## Requirements
 
-* Ansible >= 2.10 
+* Ansible >= 2.10
 * Linux Distribution
     * Debian Family
-        * Ubuntu
-            * Focal (20.04)
-            * Jammy (22.04)
-        * Debian
-            * Bullseye (11)
-            * Bookworm (12)
+      * Ubuntu
+        * Focal (20.04)
+        * Jammy (22.04)
+      * Debian
+        * Bullseye (11)
+        * Bookworm (12)
 
 ## Usage
 
